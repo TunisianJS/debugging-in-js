@@ -1,0 +1,37 @@
+version: "3.4"
+
+networks:
+  network:
+    driver: bridge
+
+services:
+  client:
+    container_name: demo-client
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        PROJECT: client
+    ports:
+      - "3000:3000"
+    volumes:
+      - "./client/src:/app/src"
+    networks:
+      - network
+    command: "npm run start"
+
+  server:
+    container_name: demo-server
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        PROJECT: server
+    ports:
+      - "4000:4000"
+      - "9229:9229"
+    volumes:
+      - "./server/src:/app/src"
+    networks:
+      - network
+    command: "npm run start:debug"

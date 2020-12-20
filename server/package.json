@@ -1,0 +1,27 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha --exit --timeout 3000",
+    "start": "node server.js",
+    "start:debug": "nodemon --inspect=0.0.0.0:9229 src/server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "chai-http": "^4.3.0",
+    "mocha": "^8.2.1"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "card-validator": "^8.1.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1"
+  }
+}

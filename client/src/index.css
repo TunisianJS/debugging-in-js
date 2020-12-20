@@ -1,0 +1,13 @@
+#root {
+  height: 100vh;
+}
+
+.v-align {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.container {
+  max-width: 600px;
+}
